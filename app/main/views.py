@@ -1,9 +1,9 @@
 from flask import render_template,request,redirect,url_for,abort
 from . import main
 from ..request import get_quote
-from .forms import PostForm,CommentForm,SubscribeForm,UnsubscribeForm,ContactForm,UpdateProfile
-from ..models import Post,Comment,Subscriber,Contact,User
-from ..email import mail_message
+# from .forms import PostForm,CommentForm,SubscribeForm,UnsubscribeForm,ContactForm,UpdateProfile
+# from ..models import Post,Comment,Subscriber,Contact,User
+# from ..email import mail_message
 
 @main.route('/')
 def index():
