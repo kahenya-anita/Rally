@@ -1,7 +1,8 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
-<div class="header-bottom">
+<div class="banner-body">
+<div class="header-bottom ">
     <div class="header-bottom-top">
         <ul>
             <li><a href="#" class="g"> </a></li>
@@ -55,37 +56,37 @@
             <ul id="flexiselDemo1">			
                 <li>
                     <div class="banner-bottom-grid">
-                        <img src="images/1.jpg" alt=" " class="img-responsive" />
+                        <img src="{{url_for('static',filename='images/1.jpg')}}" alt=".. " class="img-responsive" />
                         <p>All parts should go together without forcing.
                             You must remember that the parts you are reassembling were disassembled by you.
                             Therefore, if you can’t get them together again, there must be a reason. 
                             By all means, do not use a hammer.</p>
                         <div class="more">
-                            <a href="single.html" class="hvr-bounce-to-bottom sint">Read More</a>
+                            <a href="#" class="hvr-bounce-to-bottom sint">Humourous</a>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="banner-bottom-grid">
-                        <img src="images/2.jpg" alt=" " class="img-responsive" />
+                        <img src="{{url_for('static',filename='images/2.jpg')}}" alt=".." class="img-responsive" />
                         <p>Imagination is more important than knowledge.
                             For knowledge is limited, whereas imagination embraces the entire world,
                             stimulating progress, giving birth to evolution.It is easier to change 
                             the specification to fit the program than vice versa.</p>
                         <div class="more">
-                            <a href="single.html" class="hvr-bounce-to-bottom sint">Read More</a>
+                            <a href="#" class="hvr-bounce-to-bottom sint">Inspirational</a>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="banner-bottom-grid">
-                        <img src="images/3.jpg" alt=" " class="img-responsive" />
+                        <img src="{{url_for('static',filename='images/3.jpg')}}" alt=" " class="img-responsive" />
                         <p>The most likely way for the world to be destroyed, most experts agree, is by accident.
                             That’s where we come in; we’re computer professionals. 
                             We cause accidents.And in a room full of top software designers,
                              if two agree on the same thing, that’s a majority.</p>
                         <div class="more">
-                            <a href="single.html" class="hvr-bounce-to-bottom sint">Read More</a>
+                            <a href="#" class="hvr-bounce-to-bottom sint">Educative</a>
                         </div>
                     </div>
                 </li>
@@ -121,4 +122,5 @@
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
