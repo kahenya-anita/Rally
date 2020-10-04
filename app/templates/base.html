@@ -12,7 +12,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-               <a class="navbar-brand" href="index.html"><span>R</span>ally</a>
+               <a class="navbar-brand" href="#"><span>R</span>ally</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -33,10 +33,35 @@
             </div><!-- /.navbar-collapse -->
         </nav>
     </div>
-{% endblock %}
+    {% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/common.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style5.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/swipebox.css')}}">
+    {% endblock %}
+
+    {% block scripts%}
+    {{ super() }}    
+    <script src="{{url_for('static',filename='js/jquery.flexisel.js')}}"></script>
+    <script src="{{url_for('static',filename='js/responsiveslides.min.js')}}"></script>
+    {% endblock %}
+
+    {% block head%}
+    {{ super() }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Courgette&family=Grenze+Gotisch:wght@800&family=New+Rocker&display=swap" rel="stylesheet">
+    {% endblock %}
+
+
 
     {% if title %}
         <title> {{ title }}</title>
         {% else %}
         <title> Rally blog for Devs </title>
     {% endif %}
+
+{% endblock %}
