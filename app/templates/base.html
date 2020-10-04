@@ -33,3 +33,9 @@
             </div><!-- /.navbar-collapse -->
         </nav>
     </div>
+
+    {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Rally blog for Devs </title>
+    {% endif %}
