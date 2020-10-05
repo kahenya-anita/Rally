@@ -120,7 +120,7 @@ def subscribe():
         mail_list=[]
         mail_list.append(new_email)
         
-        mail_message("You subscribed to the Blog post.","email/new_subscriber",mail_list)
+        mail_message("You subscribed to the Rally Blog post.","email/new_subscriber",mail_list)
         
         return redirect(url_for('.index'))   
     
@@ -143,7 +143,7 @@ def unsubscribe():
         mail_list=[]
         mail_list.append(new_email)
         
-        mail_message("You've unsubscribed from  The Blog post.","email/bye",mail_list)
+        mail_message("You've unsubscribed from  Rally Blog post.","email/bye",mail_list)
         
         return redirect(url_for('.index'))   
     
