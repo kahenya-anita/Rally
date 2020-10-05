@@ -20,10 +20,12 @@
             <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
              <ul class="nav navbar-nav">
                 <li class="hvr-bounce-to-bottom active"><a href="">Home</a></li>
+                <li class="hvr-bounce-to-bottom"><a href="/contact">Contact Us</a></li>
                 {% if current_user.is_authenticated %}
-                <li class="hvr-bounce-to-bottom"><a href="">Blog Posts</a></li>
-                <li class="hvr-bounce-to-bottom"><a href="">New Post</a></li>
-                <li class="hvr-bounce-to-bottom"><a href="">Account</a></li>
+                <li class="hvr-bounce-to-bottom"><a href="{{url_for('about')}}">Blog Posts</a></li>
+                <li class="hvr-bounce-to-bottom"><a href="/use">New Post</a></li>
+                <li class="hvr-bounce-to-bottom"><a href="{{url_for('profile')}}">Account</a></li>
+                <li class="hvr-bounce-to-bottom"><a href="/update_profile">Update Profile</a></li>
                 <li class="hvr-bounce-to-bottom"><a href="{{url_for('auth.logout')}">Logout</a></li>
               </ul>
               {% else %}
