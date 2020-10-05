@@ -18,7 +18,11 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    pass
+    SQLALCHEMY_DATABASE_URI = 'postgres+psycopg2://yunidfbnwrdsxo:688063753c46cc99c32a873c4ebf92117fd5f70aaf7f3286fb278904bf4bd891@ec2-52-87-22-151.compute-1.amazonaws.com:5432/ddnsjnb7s86ukt'
+
+
+class TestConfig(Config):
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL_TEST")
 
 
 class DevConfig(Config):
@@ -28,10 +32,12 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
+    SQLALCHEMY_DATABASE_URI = 'postgres+psycopg2://yunidfbnwrdsxo:688063753c46cc99c32a873c4ebf92117fd5f70aaf7f3286fb278904bf4bd891@ec2-52-87-22-151.compute-1.amazonaws.com:5432/ddnsjnb7s86ukt'
 
     DEBUG = True
 
 config_options = {
 'development':DevConfig,
-'production':ProdConfig
+'production':ProdConfig,
+'test':TestConfig
 }
