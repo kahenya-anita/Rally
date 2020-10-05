@@ -74,7 +74,7 @@ class Comment(db.Model):
     
     def __repr__(self):
         return f'{self.comment}'
-        
+
 
 class Subscriber(db.Model):
     __tablename__ = 'subscribers'
@@ -88,6 +88,22 @@ class Subscriber(db.Model):
     
     def __repr__(self):
         return f'{self.email}'
+
+class Contact(db.Model):
+    __tablename__ = 'contacts'
+    id = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.String(255),index = True)
+    email = db.Column(db.String(255),index = True) 
+    title = db.Column(db.String)
+    message = db.Column(db.String)
+
+    def save_contact(self):
+        db.session.add(self)
+        db.session.commit()
+
+    
+    def __repr__(self):
+        return f'{self.title}'
 
 
 
