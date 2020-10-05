@@ -20,16 +20,19 @@
             <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
              <ul class="nav navbar-nav">
                 <li class="hvr-bounce-to-bottom active"><a href="">Home</a></li>
+                {% if current_user.is_authenticated %}
                 <li class="hvr-bounce-to-bottom"><a href="">Blog Posts</a></li>
                 <li class="hvr-bounce-to-bottom"><a href="">New Post</a></li>
                 <li class="hvr-bounce-to-bottom"><a href="">Account</a></li>
-                <li class="hvr-bounce-to-bottom"><a href="">Logout</a></li>
+                <li class="hvr-bounce-to-bottom"><a href="{{url_for('auth.logout')}">Logout</a></li>
               </ul>
+              {% else %}
               <div class="sign-in">
                 <ul>
-                    <li><a href="login.html">Sign In </a>/</li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="{{url_for('auth.login')}}">Sign In </a>/</li>
+                    <li><a href="{{url_for('auth.register')}}">Register</a></li>
                 </ul>
+                {%endif%}
                 </div>
             </div><!-- /.navbar-collapse -->
         </nav>
