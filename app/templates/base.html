@@ -22,7 +22,7 @@
                 <li class="hvr-bounce-to-bottom active"><a href="">Home</a></li>
                 <li class="hvr-bounce-to-bottom"><a href="/contact">Contact Us</a></li>
                 {% if current_user.is_authenticated %}
-                <li class="hvr-bounce-to-bottom"><a href="{{url_for('about')}}">Blog Posts</a></li>
+                <li class="hvr-bounce-to-bottom"><a href="{{url_for('post')}}">Blog Posts</a></li>
                 <li class="hvr-bounce-to-bottom"><a href="/use">New Post</a></li>
                 <li class="hvr-bounce-to-bottom"><a href="{{url_for('profile')}}">Account</a></li>
                 <li class="hvr-bounce-to-bottom"><a href="/update_profile">Update Profile</a></li>
