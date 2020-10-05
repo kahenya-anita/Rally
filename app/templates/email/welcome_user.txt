@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to The Blog post
+We have just seen you have signed up to our application and want to welcome you to the family. Please enjoy from the top best killer programming quotes.
