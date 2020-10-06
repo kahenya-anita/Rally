@@ -24,7 +24,7 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(255),unique = True,index = True)    
     password_hash = db.Column(db.String(255))
     name = db.Column(db.String)
-    prof_pic_path = db.Column(db.String)
+    profile_pic_path = db.Column(db.String)
     bio = db.Column(db.String)
     password_secure = db.Column(db.String(255))
 

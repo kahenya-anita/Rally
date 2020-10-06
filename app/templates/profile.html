@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% import 'macros.html' as macro%}
+
+{% block content %}
+
+<div class="container">
+    <div class="row under-nav">
+        <div class="col-xs-12 col-sm-8">
+            <div class="row">
+                <div class="col-xs-12">
+                    {% if author.name %}
+                    <h1> {{author.name| upper}} </h1>
+                    {%else%}
+                    <h1> No name for author </h1>
+                    {% endif %}                    
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    {% if author.bio %}
+                    <p class="text-justify"> {{author.bio}}</p>
+                    {%else%}
+                    <p> No bio </p>
+                    {% endif %}
+                    {% if current_user.is_authenticated %}
+                    <p class="text-primary"><a href="/update_profile">Update profile</a></p>
+                    {% endif %}
+                </div>
+                <div class="col-xs-12 col-sm-5">
+                    {% if author.prof_pic_path %}
+                    <img src="{{url_for('static',filename=author.prof_pic_path)}}" alt="" class="img-thumbnail">
+                    {%else%}
+                    <p>No profile picture</p>
+                    {% endif %}
+                </div>
+                <div class="col-xs-0 col-sm-1"></div>
+            </div>
+            <div class="row under-nav">
+                <div class="col-xs-12">
+                    <h2>Articles</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row display-flex">
+                {{ macro.displayBlogs(posts) }}
+            </div>
+        </div>
+        <div class="col-xs-0 col-sm-1"></div>
+        <div class="col-xs-12 col-sm-3">
+            <div class="jumbotron jumbotron-quote">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2><u>Quote</u></h2>
+                        <p>"{{quote.quote}}"</p>
+                        <p class="text-muted">- {{quote.author}}</p>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
